@@ -186,7 +186,7 @@ export default function App() {
           
           <main className="flex-1 overflow-y-auto px-3.5 py-4 scroll-smooth font-sans relative">
             {activeTab === 'home' && (
-              <div className="space-y-4 pb-28">
+              <div className="space-y-4 pb-40">
                 {heroArticle && (
                   <div onClick={() => setActiveArticle(heroArticle)} className="relative rounded-2xl overflow-hidden shadow-md cursor-pointer group bg-black">
                     <div className="aspect-16/10 w-full relative">
@@ -218,7 +218,7 @@ export default function App() {
             )}
             
             {activeTab === 'feed' && (
-              <div className="space-y-4 pb-28">
+              <div className="space-y-4 pb-40">
                 <div className="grid grid-cols-1 gap-3.5">
                   {allArticles.map((art) => (
                     <ArticleCard
@@ -237,7 +237,7 @@ export default function App() {
             )}
 
             {activeTab === 'links' && (
-              <div className="space-y-4 pb-28 animate-in fade-in duration-200 px-1 pt-2 font-sans">
+              <div className="space-y-4 pb-40 animate-in fade-in duration-200 px-1 pt-2 font-sans">
                 <h3 className="text-sm font-extrabold mb-4 px-1 text-[#012d1d] dark:text-emerald-400">پیوندها و صفحات ویژه</h3>
                 <div className="space-y-3">
                   {customLinks.map((l, idx) => (
