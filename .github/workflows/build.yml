@@ -17,10 +17,10 @@ jobs:
         with:
           node-version: '20'
 
-      - name: Install dependencies
+      - name: Install npm dependencies
         run: npm install
 
-      - name: Build Web PWA (dist)
+      - name: Build Web PWA
         run: npm run build
 
       - name: Upload Web Build (dist-web-build)
@@ -29,23 +29,24 @@ jobs:
           name: dist-web-build
           path: dist/
 
-      - name: Setup Java JDK 21 for Android
+      - name: Setup Java JDK 17
         uses: actions/setup-java@v4
         with:
           distribution: 'temurin'
-          java-version: '21'
+          java-version: '17'
 
-      - name: Setup Android SDK
-        uses: android-actions/setup-android@v3
+      - name: Accept Android SDK Licenses
+        run: yes | sdkmanager --licenses || true
 
-      - name: Generate Capacitor Android Platform & Compile APK
+      - name: Generate Android Project & Build APK
         run: |
           npx cap add android
           npx cap sync android
-          chmod +x android/gradlew
-          cd android && ./gradlew assembleDebug
+          cd android
+          chmod +x gradlew
+          ./gradlew assembleDebug
 
-      - name: Upload Installable Android APK (android-apk)
+      - name: Upload Android APK
         uses: actions/upload-artifact@v4
         with:
           name: android-apk
