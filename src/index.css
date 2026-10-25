@@ -1,0 +1,31 @@
+@import "tailwindcss";
+
+@layer utilities {
+  .pb-safe {
+    padding-bottom: env(safe-area-inset-bottom);
+  }
+}
+
+body {
+  margin: 0;
+  font-family: 'Vazirmatn', system-ui, -apple-system, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.reading-mode-sepia {
+  background-color: #fbf0d9;
+  color: #3b2f2f;
+}
+
+.reading-mode-dark {
+  background-color: #121815;
+  color: #e0e3e7;
+}
+
+#wp-content-container img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 0.75rem;
+  margin: 1rem auto;
+}
