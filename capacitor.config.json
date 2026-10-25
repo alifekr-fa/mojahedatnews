@@ -1,0 +1,9 @@
+{
+  "appId": "com.mojahedat.app",
+  "appName": "مجاهدت",
+  "webDir": "dist",
+  "bundledWebRuntime": false,
+  "server": {
+    "androidScheme": "https"
+  }
+}
